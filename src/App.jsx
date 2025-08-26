@@ -1,9 +1,9 @@
 import { URL } from './Constants';
 import React, { useEffect, useReducer, useRef } from "react";
 import { useState } from "react";
-import Answer from './componenets/Answer';
-import RecentSearch from './componenets/recentSearch';
-import QuestionAnswer from './componenets/QuestionAnswer';
+import Answer from './components/Answer';
+import RecentSearch from './components/recentSearch';
+import QuestionAnswer from './components/QuestionAnswer';
 
 function App() {
     const [question, setQuestion] = useState('');
