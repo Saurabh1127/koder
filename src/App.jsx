@@ -2,13 +2,16 @@ import { URL } from './Constants';
 import React, { useEffect, useReducer, useRef } from "react";
 import { useState } from "react";
 import Answer from './components/Answer';
-import RecentSearch from './components/recentSearch';
+import RecentSearch from './components/RecentSearch';
 import QuestionAnswer from './components/QuestionAnswer';
 
 function App() {
     const [question, setQuestion] = useState('');
     const [result, setResult] = useState([]);
-    const [recentHistory, setRecentHistory] = useState(JSON.parse(localStorage.getItem('history')))
+    const [recentHistory, setRecentHistory] = useState(() => {
+        const history = localStorage.getItem('history');
+        return history ? JSON.parse(history) : [];
+    });
     const [selectedHistory, setSelectedHistory] = useState('')
     const scrollToAns=useRef()
     const [loader,setLoader] = useState(false)
